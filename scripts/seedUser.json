@@ -1,0 +1,11 @@
+[
+  {
+    "username": "123@qwe.com",
+    "firstname": "John",
+    "password": "123",
+    "lastname": "Doe",
+    "location": "345 toronto st.",
+    "isManager": true,
+    "teamid": "1"
+  }
+]
