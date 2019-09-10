@@ -11,7 +11,7 @@ function MgrNav() {
 			</li>
 			<li className="nav-item">
 				<Link
-					to="/managerview"
+					to="/managerview/team"
 					className={window.location.pathname === "/managerview/team" ? "nav-link active" : "nav-link"}
 				>
 					<i className="fas fa-users-cog fa-2x"></i>

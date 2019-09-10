@@ -1,0 +1,56 @@
+[
+	{
+		"username": "aa@job.com",
+		"firstname": "Andrew",
+		"password": "null",
+		"lastname": "Andrews",
+		"location": "345 toronto st.",
+		"isManager": false,
+		"teamid": "1"
+	},
+	{
+		"username": "bb@job.com",
+		"firstname": "Brian",
+		"password": "null",
+		"lastname": "Brown",
+		"location": "345 toronto st.",
+		"isManager": false,
+		"teamid": "1"
+	},
+	{
+		"username": "cc@job.com",
+		"firstname": "Chris",
+		"password": "null",
+		"lastname": "Charles",
+		"location": "345 toronto st.",
+		"isManager": false,
+		"teamid": "1"
+	},
+	{
+		"username": "dd@job.com",
+		"firstname": "Doug",
+		"password": "null",
+		"lastname": "Douglass",
+		"location": "345 toronto st.",
+		"isManager": false,
+		"teamid": "1"
+	},
+	{
+		"username": "ee@job.com",
+		"firstname": "Eddie",
+		"password": "null",
+		"lastname": "Edwards",
+		"location": "345 toronto st.",
+		"isManager": false,
+		"teamid": "1"
+	},
+	{
+		"username": "ff@job.com",
+		"firstname": "Felix",
+		"password": "null",
+		"lastname": "Ferdinand",
+		"location": "345 toronto st.",
+		"isManager": false,
+		"teamid": "1"
+	}
+]
