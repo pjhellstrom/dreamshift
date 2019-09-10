@@ -1,9 +1,9 @@
 const User = require("../models/user");
 
 // Defining methods for the userController
-module.exports = {
+module.exports = {                              
   findAll: function(req, res) {
-    User.find(req.query)
+    User.find({ teamId: req.params.id })
       .sort({ lastName: -1 })
       .populate("team")
       .then(dbModel => res.json(dbModel))
