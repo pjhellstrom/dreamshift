@@ -11,6 +11,7 @@ authController.home = function(req, res) {
 
 // Go to registration page
 authController.register = function(req, res) {
+  console.log("authController goto register callback hit");
   res.render("register");
 };
 
@@ -20,12 +21,12 @@ authController.register = function(req, res) {
 authController.doRegister = function(req, res) {
   const newUser = new User({
     username: req.body.username,
-    firstName: req.body.firstname,
-    lastName: req.body.lastname,
-    phoneNumber: req.body.phonenumber,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    phoneNumber: req.body.phoneNumber,
     location: req.body.location,
     isManager: req.body.isManager,
-    teamId: req.body.teamid
+    teamId: req.body.teamId
   });
   User.register(newUser, req.body.password, function(err, username) {
     console.log(newUser);
@@ -42,6 +43,7 @@ authController.doRegister = function(req, res) {
 
 // Go to login page
 authController.login = function(req, res) {
+  console.log("authController goto login callback hit");
   res.render("login");
 };
 
