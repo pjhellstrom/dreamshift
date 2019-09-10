@@ -11,4 +11,7 @@ router
   .get(teamController.findById)
   .delete(teamController.removeTeam);
 
+//route to display all teams
+router.get("/all", teamController.displayTeam);
+
 module.exports = router;
