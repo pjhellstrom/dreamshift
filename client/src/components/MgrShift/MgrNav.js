@@ -19,7 +19,7 @@ function MgrNav() {
 			</li>
 			<li className="nav-item">
 				<Link
-					to="/managerview"
+					to="/managerview/addshift"
 					className={window.location.pathname === "/managerview/addshift" ? "nav-link active" : "nav-link"}
 				>
 					<i className="fas fa-calendar-plus fa-2x"></i>
