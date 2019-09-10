@@ -54,3 +54,6 @@ post methord : /api/shift/manager/addshift
         end: ,
         team_id: 
     }
+
+
+http://localhost:3001/api/user/manager/all/5d77e45fb112c824efae3718
