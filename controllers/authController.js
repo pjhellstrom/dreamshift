@@ -20,12 +20,12 @@ authController.register = function(req, res) {
 authController.doRegister = function(req, res) {
   const newUser = new User({
     username: req.body.username,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    phonenumber: req.body.phonenumber,
+    firstName: req.body.firstname,
+    lastName: req.body.lastname,
+    phoneNumber: req.body.phonenumber,
     location: req.body.location,
     isManager: req.body.isManager,
-    teamid: req.body.teamid
+    teamId: req.body.teamid
   });
   User.register(newUser, req.body.password, function(err, username) {
     console.log(newUser);
