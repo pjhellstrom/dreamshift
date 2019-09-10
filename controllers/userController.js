@@ -4,7 +4,7 @@ const User = require("../models/user");
 module.exports = {
   findAll: function(req, res) {
     User.find(req.query)
-      .sort({ last_name: -1 })
+      .sort({ lastName: -1 })
       .populate("team")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -21,7 +21,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    User.findOneAndUpdate({ _id: req.params.id }, req.body)
+    User.updateOne({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
