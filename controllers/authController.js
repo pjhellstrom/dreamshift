@@ -22,6 +22,7 @@ authController.doRegister = function(req, res) {
     username: req.body.username,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
+    phonenumber: req.body.phonenumber,
     location: req.body.location,
     isManager: req.body.isManager,
     teamid: req.body.teamid

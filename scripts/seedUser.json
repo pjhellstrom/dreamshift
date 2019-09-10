@@ -1,9 +1,10 @@
 [
   {
     "username": "123@qwe.com",
-    "firstname": "John",
+    "firstName": "John",
     "password": "123",
-    "lastname": "Doe",
+    "lastName": "Doe",
+    "phoneNumber": "14169990000",
     "location": "345 toronto st.",
     "isManager": true,
     "teamid": "1"
