@@ -15,4 +15,9 @@ teamController.removeTeam = function(req, res) {
     .catch(err => res.status(422).json(err));
 };
 
+teamController.displayTeam = function(req,res){
+  Team.find(req.query)
+  .then(dbModel => res.json(dbModel))
+  .catch(err => res.status(422).json(err));
+}
 module.exports = teamController;

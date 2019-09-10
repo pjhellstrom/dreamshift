@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const shiftController = require("../../controllers/shiftController");
-const userController = require("../../controllers/userController")
+//const userController = require("../../controllers/userController")
 
 // Matches with "/employee"  get all avaliavle shifts
 router.route("/employee").get(shiftController.findAll);
