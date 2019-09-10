@@ -7,4 +7,8 @@ router.use("/shifts", shiftRoutes);
 
 router.use("/auth", authRoutes);
 
+router.use("/user", userRoutes);
+
+router.use("/team", teamRoutes);
+
 module.exports = router;
