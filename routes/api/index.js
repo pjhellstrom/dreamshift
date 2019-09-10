@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const shiftRoutes = require("./shifts");
-const userRoutes = require("./users");
 const authRoutes = require("./auth");
+const userRoutes = require("./users");
+const teamRoutes = require("./team");
 
 // Book routes
 router.use("/shifts", shiftRoutes);
