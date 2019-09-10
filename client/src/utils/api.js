@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export default {
-
   getEmployee: function() {
     return axios.get("/employee");
   },
@@ -11,7 +10,4 @@ export default {
   getManager: function() {
     return axios.get("/manager");
   }
-
-
 };
-
