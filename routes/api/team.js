@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const team = require("../../controllers/teamController");
+const teamController = require("../../controllers/teamController");
 
 // route for adding a new team
-router.post("/addteam", team.addTeam);
+router.route("/addteam").post(teamController.addTeam);
 
 // route to deleting a team
-router.delete("/removeteam", team.removeTeam);
+router
+  .route("/removeteam/:id")
+  .get(teamController.findById)
+  .delete(teamController.removeTeam);
 
 module.exports = router;

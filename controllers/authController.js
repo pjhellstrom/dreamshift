@@ -11,6 +11,7 @@ authController.home = function(req, res) {
 
 // Go to registration page
 authController.register = function(req, res) {
+  console.log("authController goto register callback hit");
   res.render("register");
 };
 
@@ -42,6 +43,7 @@ authController.doRegister = function(req, res) {
 
 // Go to login page
 authController.login = function(req, res) {
+  console.log("authController goto login callback hit");
   res.render("login");
 };
 
