@@ -6,6 +6,15 @@ import shifts from "../../fakedata/shift.json";
 
 class MgrShift extends Component {
 
+	deleShift = (id) =>{
+		console.log(id)
+		// Add call to remove shift
+	}
+
+	updateShift = (id) =>{
+		console.log(id)
+		// Add call to update shift
+	}
 
 
 	render() {
@@ -19,12 +28,12 @@ class MgrShift extends Component {
 					{shifts.map(
 						(shifts, i) => (
 
-
 						<ShiftCard
 							{...shifts} // Breaks out shift data for rendering each card
 							key={i} // Gives each card a react key i
-							/>
-
+							deleShift={this.deleShift}
+							updateShift={this.updateShift}
+						/>
 						)
 					)}
 

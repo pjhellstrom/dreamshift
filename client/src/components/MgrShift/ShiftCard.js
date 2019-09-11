@@ -1,11 +1,12 @@
 import React from "react";
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 const ShiftCard = (props) => {
 	return (
 		<div className="card">
 
-			<Card>
+			<Card id={`${props.shiftid}`}>
 				{/* {console.log(props)} */}
 				<Card.Header>{props.name}</Card.Header>
 				<Card.Body>
@@ -13,8 +14,9 @@ const ShiftCard = (props) => {
 					<Card.Text>
 						<b>Date:</b> {props.date}<br/>
 						<b>Time:</b> {props.start} to {props.end}<br/>
-						<b>Location:</b> {props.location}
-
+						<b>Location:</b> {props.location}<br/>
+						<Button variant="outline-success" onClick={() => props.updateShift(props.shiftid)}>Update</Button>
+						<Button variant="outline-warning" onClick={() => props.deleShift(props.shiftid)}>Remove</Button>
 					</Card.Text>
 				</Card.Body>
 			</Card>
@@ -24,12 +26,3 @@ const ShiftCard = (props) => {
 }
 
 export default ShiftCard;
-
-// "name" : "Donut Defroster",
-// "description" : "Make tasty donuts for our customers",
-// "capacity" : 1,
-// "location" :  "124 University Ave",
-// "date" : "09-11-2019",
-// "start" : "0600",
-// "end" : "1000",
-// "team_id" : 1

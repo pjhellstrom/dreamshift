@@ -9,9 +9,7 @@ class MgrTeam extends Component {
 	deleEmp = (id) =>{
 		console.log(id)
 
-		// if(this.state.chosen.includes(id))
-
-
+		// have pseudo id of emp, make call to remove 
 	}
 
 	render() {
