@@ -9,6 +9,7 @@ import LandingPage from "./components/pages/LandingPage";
 
 import MgrShift from "./components/MgrShift/MgrShift";
 import MgrTeam from "./components/MgrShift/MgrTeam";
+import EmpShift from "./components/EmpShift/EmpShift";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/managerview/team" component={MgrTeam} />
         <Route exact path="/managerview/addshift" component={MgrShift} />
         <Route exact path="/managerview/manageshift" component={MgrShift} />
+        <Route exact path="/employeeview" component={EmpShift} />
 
         {/* <Route exact path="/employeeview" component={EmpShift} /> */}
         {/* <Route path="/contact" component={Contact} /> */}
