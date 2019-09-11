@@ -6,6 +6,12 @@ import users from "../../fakedata/users.json";
 
 class MgrTeam extends Component {
 
+	deleEmp = (id) =>{
+		console.log(id)
+
+		// have pseudo id of emp, make call to remove 
+	}
+
 	render() {
 		return (
 			<div>
@@ -20,6 +26,7 @@ class MgrTeam extends Component {
 							<MgrEmpCard
 								{...users} // Breaks out shifts data for rendering each card
 								key={i} // Gives each card a react key i
+								deleEmp={this.deleEmp}
 							/>
 							
 						)

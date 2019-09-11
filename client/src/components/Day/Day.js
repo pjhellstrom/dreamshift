@@ -1,21 +1,30 @@
-// import React, { Component } from "react";
-// import Date from "../Date";
-// import EmpShiftCard from "../EmpShift";
-// // import API from "../../utils/api";
-// import fakeData from "../../fakedata/shift.json"
 
-// class Day extends Component{
-//   // state = {
-//   //   pushedDay=[],
-//   // }
+// day container which populates all shifts within day
+// date component listed in desceding order
 
-
-
-//   // pushJob = (day) =>{
-//   //   // let jobData = API.getManager;
-//   //   let jobData = fakeData;
-
-//   // }
+import React  from 'react';
+import Moment from 'react-moment';
+import ShiftCard from '../EmpShift/ShiftCard';
+// import Date from "./Date";
+// import EmpShift from "./EmpShift";
+import shifts from "../../fakedata/shift.json";
 
 
-// }
+function Day (props) {
+    return (
+        <div>
+            <h1>DAY</h1>
+            <div>{props.children}</div>
+            {this.shifts.map(shift => (
+            <ShiftCard
+            // Shift={shift.id}
+            />
+        )) }
+        </div>
+    )
+}
+
+
+
+export default Day;
+

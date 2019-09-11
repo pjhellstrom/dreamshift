@@ -1,53 +1,65 @@
 [
 	{
+		"userid": 1,
 		"username": "aa@job.com",
 		"firstname": "Andrew",
 		"password": "null",
+		"phoneNumber": "555-555-5555",
 		"lastname": "Andrews",
 		"location": "345 toronto st.",
 		"isManager": false,
 		"teamid": "1"
 	},
 	{
+		"userid": 2,
 		"username": "bb@job.com",
 		"firstname": "Brian",
 		"password": "null",
+		"phoneNumber": "555-555-5555",
 		"lastname": "Brown",
 		"location": "345 toronto st.",
 		"isManager": false,
 		"teamid": "1"
 	},
 	{
+		"userid": 3,
 		"username": "cc@job.com",
 		"firstname": "Chris",
 		"password": "null",
+		"phoneNumber": "555-555-5555",
 		"lastname": "Charles",
 		"location": "345 toronto st.",
 		"isManager": false,
 		"teamid": "1"
 	},
 	{
+		"userid": 4,
 		"username": "dd@job.com",
 		"firstname": "Doug",
 		"password": "null",
+		"phoneNumber": "555-555-5555",
 		"lastname": "Douglass",
 		"location": "345 toronto st.",
 		"isManager": false,
 		"teamid": "1"
 	},
 	{
+		"userid": 5,
 		"username": "ee@job.com",
 		"firstname": "Eddie",
 		"password": "null",
+		"phoneNumber": "555-555-5555",
 		"lastname": "Edwards",
 		"location": "345 toronto st.",
 		"isManager": false,
 		"teamid": "1"
 	},
 	{
+		"userid": 6,
 		"username": "ff@job.com",
 		"firstname": "Felix",
 		"password": "null",
+		"phoneNumber": "555-555-5555",
 		"lastname": "Ferdinand",
 		"location": "345 toronto st.",
 		"isManager": false,

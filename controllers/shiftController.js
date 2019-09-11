@@ -3,7 +3,7 @@ const Shift = require("../models/shift");
 // Defining methods for the shiftController
 module.exports = {
   findAll: function(req, res) {
-    Shift.find(req.query)
+    Shift.find({teamId : req.params.id})
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

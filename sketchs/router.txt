@@ -57,3 +57,8 @@ post methord : /api/shift/manager/addshift
 
 
 http://localhost:3001/api/user/manager/all/5d77e45fb112c824efae3718
+
+
+if the cliame > capacity {
+    the front will not render the shift;
+}

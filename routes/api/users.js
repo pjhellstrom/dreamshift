@@ -11,5 +11,7 @@ router.route("/manager/employee/:id").put(userController.update);
 // Matches with "/manager/:id" delete user
 router.route("/manager/deleteuser/:id").delete(userController.remove);
 
+// Matches with "/employee/claimShift/:id"
+router.route("/employee/claimShift/:id").put(userController.claim);
 
 module.exports = router;

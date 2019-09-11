@@ -1,5 +1,6 @@
 [
 	{
+		"shiftid": 1,
         "name" : "Cofee Maker",
         "description" : "Hard worker need",
         "capacity" : 5,
@@ -10,6 +11,7 @@
         "team_id" : 1
 	},
 	{
+		"shiftid": 2,
         "name" : "Donut Defroster",
         "description" : "Make tasty donuts for our customers",
         "capacity" : 1,
@@ -20,6 +22,7 @@
         "team_id" : 1
 	},
 	{
+		"shiftid": 3,
         "name" : "Service Counter",
         "description" : "Handle cash money and credit cards",
         "capacity" : 2,
@@ -30,6 +33,7 @@
         "team_id" : 1
 	},
 	{
+		"shiftid": 4,
         "name" : "Barrista",
         "description" : "Hard worker need",
         "capacity" : 5,
@@ -40,6 +44,7 @@
         "team_id" : 1
 	},
 	{
+		"shiftid": 5,
         "name" : "Baker",
         "description" : "Make tasty donuts for our customers",
         "capacity" : 1,
@@ -50,6 +55,7 @@
         "team_id" : 1
 	},
 	{
+		"shiftid": 6,
         "name" : "Server",
         "description" : "Handle cash money and credit cards",
         "capacity" : 2,

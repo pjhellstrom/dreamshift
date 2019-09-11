@@ -6,6 +6,15 @@ import API from "../../utils/api";
 
 class MgrShift extends Component {
 
+	deleShift = (id) =>{
+		console.log(id)
+		// Add call to remove shift
+	}
+
+	updateShift = (id) =>{
+		console.log(id)
+		// Add call to update shift
+	}
 
 
 	render() {
@@ -22,13 +31,12 @@ class MgrShift extends Component {
 					{/* mapping through dummy data change to real data in production */}
 					{shifts.map(
 						(shifts, i) => (
-
-							
 						<ShiftCard
-							{...shifts} // Breaks out mem data for rendering each card
+							{...shifts} // Breaks out shift data for rendering each card
 							key={i} // Gives each card a react key i
-							/>
-
+							deleShift={this.deleShift}
+							updateShift={this.updateShift}
+						/>
 						)
 					)}
 
