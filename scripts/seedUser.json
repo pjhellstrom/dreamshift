@@ -7,6 +7,7 @@
     "phoneNumber": "14169990000",
     "location": "345 toronto st.",
     "isManager": true,
+    "shifts": [],
     "teamid": "1"
   }
 ]

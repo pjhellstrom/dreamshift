@@ -6,6 +6,14 @@ import users from "../../fakedata/users.json";
 
 class MgrTeam extends Component {
 
+	deleEmp = (id) =>{
+		console.log(id)
+
+		// if(this.state.chosen.includes(id))
+
+
+	}
+
 	render() {
 		return (
 			<div>
@@ -20,6 +28,7 @@ class MgrTeam extends Component {
 							<MgrEmpCard
 								{...users} // Breaks out shifts data for rendering each card
 								key={i} // Gives each card a react key i
+								deleEmp={this.deleEmp}
 							/>
 							
 						)

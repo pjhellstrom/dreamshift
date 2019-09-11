@@ -21,7 +21,7 @@ class MgrShift extends Component {
 
 
 						<ShiftCard
-							{...shifts} // Breaks out mem data for rendering each card
+							{...shifts} // Breaks out shift data for rendering each card
 							key={i} // Gives each card a react key i
 							/>
 

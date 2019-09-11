@@ -16,12 +16,12 @@ function App() {
       <div>
         {/* <NavTabs /> */}
         <Route exact path="/" component={LandingPage} />
+		{/* <Route exact path="/login" component={LandingPage} /> */}
         <Route exact path="/managerview" component={MgrShift} />
         <Route exact path="/managerview/team" component={MgrTeam} />
         <Route exact path="/managerview/addshift" component={MgrAddShift} />
         <Route exact path="/managerview/manageshift" component={MgrShift} />
-
-				<Route exact path="/employeeview" component={EmpShift} />
+        <Route exact path="/employeeview" component={EmpShift} />
 				<Route exact path="/employeeview/MyShift" component={EmpShift} />
         {/* <Route path="/contact" component={Contact} /> */}
       </div>
