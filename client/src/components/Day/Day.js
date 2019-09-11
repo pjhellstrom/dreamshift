@@ -6,18 +6,19 @@ import Moment from 'react-moment';
 import ShiftCard from '../EmpShift/ShiftCard';
 // import Date from "./Date";
 // import EmpShift from "./EmpShift";
-import shifts from "../../fakedata/shift.json"
+import shifts from "../../fakedata/shift.json";
+
 
 function Day (props) {
     return (
         <div>
             <h1>DAY</h1>
             <div>{props.children}</div>
-            {/* {this.shifts.map(card => () } */}
-            <ShiftCard>
-            hello
-            </ShiftCard>
-
+            {this.shifts.map(shift => (
+            <ShiftCard
+            // Shift={shift.id}
+            />
+        )) }
         </div>
     )
 }

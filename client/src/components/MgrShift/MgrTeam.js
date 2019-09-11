@@ -25,7 +25,7 @@ class MgrTeam extends Component {
 						)
 					)}
 				</div>
-				<i class="fas fa-user-plus"></i> Add New Team Member (non-func)
+				<i className="fas fa-user-plus"></i> Add New Team Member (non-func)
 			</div>
 		);
 	}
