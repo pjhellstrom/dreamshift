@@ -3,11 +3,12 @@ const User = require("../models/user");
 // Defining methods for the userController
 module.exports = {                              
   findAll: function(req, res) {
-    User.find({ teamId: req.params.id })
+    User.find({ teamId: req.params.id,
+                isManager : false})
       .sort({ lastName: -1 })
       .populate("team")
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => res.status(422).json(err));   
   },
   findById: function(req, res) {
     User.findById(req.params.id)
