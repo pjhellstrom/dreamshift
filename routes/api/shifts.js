@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const shiftController = require("../../controllers/shiftController");
-const userController = require("../../controllers/userController")
+//const userController = require("../../controllers/userController")
 
 // Matches with "/employee"  get all avaliavle shifts
 router.route("/employee").get(shiftController.findAll);
@@ -24,6 +24,9 @@ router.route("/manager/shift/:id").put(shiftController.update);
 
 // Matches with "/manager/:id" delete shift
 router.route("/manager/deleteshift/:id").delete(shiftController.remove);
+
+
+
 
 
 module.exports = router;
