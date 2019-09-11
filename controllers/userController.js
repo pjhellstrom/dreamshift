@@ -1,7 +1,7 @@
 const User = require("../models/user");
 
 // Defining methods for the userController
-module.exports = {                              
+module.exports = {
   findAll: function(req, res) {
     User.find({ teamId: req.params.id,
                 isManager : false})
@@ -23,6 +23,11 @@ module.exports = {
   },
   update: function(req, res) {
     User.updateOne({ _id: req.params.id }, req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  claim: function(req, res) {
+    User.updateOne({ _id: req.params.id }, { $push: req.body })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
