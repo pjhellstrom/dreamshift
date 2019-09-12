@@ -8,8 +8,8 @@ const shiftSchema = new Schema({
   capacity: { type: Number, trim: true, required: true },
   location: { type: String, trim: true, required: true },
   date: { type: Date, required: true },
-  start: { type: Number, required: true },
-  end: { type: Number, required: true },
+  start: { type: String, required: true },
+  end: { type: String, required: true },
   teamId: { type: String, required: true }
 });
 
