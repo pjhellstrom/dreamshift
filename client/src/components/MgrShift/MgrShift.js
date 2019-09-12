@@ -5,6 +5,9 @@ import shifts from "../../fakedata/shift.json";
 import API from "../../utils/api";
 
 class MgrShift extends Component {
+	state= {
+		teamInfo:[],
+	}
 
 	deleShift = (id) =>{
 		console.log(id)
@@ -18,13 +21,17 @@ class MgrShift extends Component {
 
 	getData = (id) =>{
 		API.getTeam(id)
-		.then(res => console.log(res))
+		.then(res =>
+			console.log(res.data),
+			// this.setState({ teamInfo: res.data })
+			)
 		.catch(err => console.log(err));
-		console.log("inside function ");
+		console.log("a value is "+ this.state.teamInfo);
+
 	}
 
-
 	render() {
+
 
 
 
@@ -37,6 +44,10 @@ class MgrShift extends Component {
 				<div>
 					<h1>Manager Page</h1>
 
+			{/* get real data============== */}
+			{this.getData("5d77e45fb112c824efae3718")}
+			{/* get real data============== */}
+
 					{/* mapping through dummy data change to real data in production */}
 					{shifts.map(
 						(shifts, i) => (
@@ -48,7 +59,7 @@ class MgrShift extends Component {
 						/>
 						)
 					)}
-					{	this.getData("5d77e45fb112c824efae3718")}
+
 					{/* <ShiftCard/> */}
 
 				</div>
