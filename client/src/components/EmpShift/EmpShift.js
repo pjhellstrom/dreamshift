@@ -4,9 +4,12 @@ import React, { Component } from "react";
 import EmpNav from "./EmpNav";
 import ShiftCard from "./EmpShiftCard";
 import shifts from "../../fakedata/shift.json";
+// import Axios from "axios";
+// import { STATES } from "mongoose";
 
-
-
+// componentWillMount = () => {
+//     Axios -> state.shift;
+// };
 
 class EmpShift extends Component{
   render(){
