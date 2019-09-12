@@ -16,14 +16,23 @@ class MgrShift extends Component {
 		// Add call to update shift
 	}
 
-
-	render() {
-		API.getManager()
+	getData = (id) =>{
+		API.getTeam(id)
 		.then(res => console.log(res))
 		.catch(err => console.log(err));
+		console.log("inside function ");
+	}
+
+
+	render() {
+
+
+
 
 		return (
+
 			<div>
+
 				<MgrNav/>
 				<div>
 					<h1>Manager Page</h1>
@@ -39,7 +48,7 @@ class MgrShift extends Component {
 						/>
 						)
 					)}
-
+					{	this.getData("5d77e45fb112c824efae3718")}
 					{/* <ShiftCard/> */}
 
 				</div>
