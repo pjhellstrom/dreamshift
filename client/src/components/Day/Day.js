@@ -2,13 +2,14 @@
 // date component listed in desceding order
 
 import React  from 'react';
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 import ShiftCard from '../EmpShift/ShiftCard';
 // import Date from "./Date";
 // import EmpShift from "./EmpShift";
-import shifts from "../../fakedata/shift.json";
+// import shifts from "../../fakedata/shift.json";
 
-
+// make a call for all employee Data, pass as prop through day Container
+// in day container, pass the props on to the shift card
 function Day (props) {
     return (
         <div>
@@ -16,7 +17,9 @@ function Day (props) {
             <div>{props.children}</div>
             {this.shifts.map(shift => (
             <ShiftCard
-            // Shift={shift.id}
+            name={shift.name}
+            // date={date.}
+
             />
         )) }
         </div>
