@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import MgrNav from "./MgrNav";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import Moment from "react-moment";
+import Button from 'react-bootstrap/Button'
+
 // import Moment from 'react-moment';
-// import DateCon from "./DateCon";
 // import moment from "moment";
 
 class MgrAddShift extends Component {
@@ -37,20 +37,8 @@ class MgrAddShift extends Component {
 	};
 
 	handleSelect = event => { //Handles datepicker picking date
-		// console.log(event);
-
-
-		// moment(event).format("MM DD YYYY")
-		
-		// console.log(event);
 		let day = event;
-		// let day = moment(event).format("MM-DD-YYYY");
-		// console.log(day);
-		// console.log(typeof(day),day);
-
 		this.setState({ date: day});
-		// this.setState.date = day;
-
 	}
 
 	render() {
@@ -120,7 +108,7 @@ class MgrAddShift extends Component {
 						min="1"
 					/><br/>
 
-					<button onClick={this.handleFormSubmit}>Submit</button>
+					<Button onClick={this.handleFormSubmit}>Submit</Button>
 				</form>
 			</div>
 		);
