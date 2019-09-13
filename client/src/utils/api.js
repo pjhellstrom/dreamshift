@@ -6,6 +6,7 @@ export default {
   //   return axios.get("/api/shifts/5d77e45fb112c824efae3718");
   // }
   getTeam: function(id) {
+	  console.log(id);
     return axios.get("/api/shifts/"+id);
   }
 };
