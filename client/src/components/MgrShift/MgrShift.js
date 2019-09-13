@@ -30,7 +30,6 @@ class MgrShift extends Component {
 			)
 		.catch(err => console.log(err));
 
-
 	}
 
 
