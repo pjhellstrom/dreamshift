@@ -1,9 +1,9 @@
 // import "./style.css";
-// import Day from "../Day/Day"
+ import Day from "../Day/Day"
 import React, { Component } from "react";
 import EmpNav from "./EmpNav";
-import ShiftCard from "./EmpShiftCard";
-import shifts from "../../fakedata/shift.json";
+// import ShiftCard from "./EmpShiftCard";
+// import shifts from "../../fakedata/shift.json";
 // import Axios from "axios";
 // import { STATES } from "mongoose";
 
@@ -18,9 +18,10 @@ class EmpShift extends Component{
         <EmpNav/>
         <div>
           <h1>Employee Page</h1>
-          {shifts.map((shifts,i) => (<ShiftCard {...shifts} key={i}/>)
-            )}
+          
         </div>
+        <Day />
+        
       </div>
     );
   }
