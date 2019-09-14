@@ -9,17 +9,6 @@ class MgrShift extends Component {
 		teamInfo:[],
 	}
 
-	// deleShift = (id) =>{
-	// 	console.log(id)
-	// 	// Add call to remove shift
-	// }
-
-	// updateShift = (id) =>{
-	// 	console.log(id)
-
-	// }
-
-
 	componentWillMount(){
 		API.getTeam("5d77e45fb112c824efae3718")
 		.then(res =>
@@ -30,18 +19,6 @@ class MgrShift extends Component {
 			)
 		.catch(err => console.log(err));
 	}
-
-
-	// getData = (id) =>{
-	// 	API.getTeam(id)
-	// 	.then(res =>
-	// 		// console.log(res.data),
-	// 		this.setState({ teamInfo: res.data })
-	// 		)
-	// 	.catch(err => console.log(err));
-	// 	console.log("a value is "+ this.state.teamInfo);
-
-	// }
 
 	render() {
 		return (
@@ -63,22 +40,6 @@ class MgrShift extends Component {
 						/>
 						)
 					)}
-
-			{/* get real data============== */}
-
-					{/* mapping through dummy data change to real data in production */}
-					{/* {shifts.map(
-						(shifts, i) => (
-						<ShiftCard
-							{...shifts} // Breaks out shift data for rendering each card
-							key={i} // Gives each card a react key i
-							// deleShift={this.deleShift}
-							// updateShift={this.updateShift}
-						/>
-						)
-					)} */}
-
-					{/* <ShiftCard/> */}
 
 				</div>
 			</div>

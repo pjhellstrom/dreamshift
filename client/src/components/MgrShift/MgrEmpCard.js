@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 // const MgrEmpCard = (this.props) => {
 class MgrEmpCard extends Component{
 	state = {
-		// showupdate: false,
 		showconfirm: false,
 	};
 
@@ -22,7 +21,6 @@ class MgrEmpCard extends Component{
 	noDele = () =>{
 		this.setState({ showconfirm: this.state.showconfirm ? false : true })
 	}
-
 
 	render(){
 		return (
@@ -52,7 +50,6 @@ class MgrEmpCard extends Component{
 
 export default MgrEmpCard;
 
-
 // REAL DATA
 // firstName: "Yating"
 // isManager: false
@@ -64,13 +61,3 @@ export default MgrEmpCard;
 // username: "employee3@qwe.com"
 // __v: 0
 // _id: "5d77eb76c1a9c9261d6dabc3"
-
-// { DUMMY DATA
-// 	"username": "aa@job.com",
-// 	"firstname": "Andrew",
-// 	"password": "null",
-// 	"lastname": "Andrews",
-// 	"location": "345 toronto st.",
-// 	"isManager": false,
-// 	"teamid": "1"
-// },
