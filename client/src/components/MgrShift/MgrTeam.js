@@ -2,9 +2,28 @@ import React, { Component } from "react";
 import MgrNav from "./MgrNav";
 import MgrEmpCard from "./MgrEmpCard";
 import users from "../../fakedata/users.json";
+import API from "../../utils/api";
 
 
 class MgrTeam extends Component {
+	state= {
+		employees:[],
+	}
+
+	
+
+	componentWillMount(){
+		console.log("Team Page Mounting")
+		API.getEmployees("5d77e45fb112c824efae3718")
+		.then(res =>
+			{
+				console.log("A response in the .then")
+				console.log(res.data);
+				this.setState({ employees: res.data }, () => console.log("a value is "+ this.state.employees));
+			}
+			)
+		.catch(err => console.log(err));
+	}
 
 	deleEmp = (id) =>{
 		console.log(id)

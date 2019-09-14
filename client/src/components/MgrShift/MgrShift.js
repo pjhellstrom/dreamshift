@@ -21,18 +21,14 @@ class MgrShift extends Component {
 
 
 	componentWillMount(){
-		console.log("sending axios call")
 		API.getTeam("5d77e45fb112c824efae3718")
 		.then(res =>
 			{
-				console.log("A response in the .then")
 				console.log(res.data);
 				this.setState({ teamInfo: res.data }, () => console.log("a value is "+ this.state.teamInfo));
 			}
 			)
 		.catch(err => console.log(err));
-
-
 	}
 
 

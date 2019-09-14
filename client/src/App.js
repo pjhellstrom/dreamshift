@@ -23,7 +23,7 @@ function App() {
         <Route exact path="/" component={LandingPage} />
 		{/* <Route exact path="/login" component={LandingPage} /> */}
         <Route exact path="/managerview" component={MgrShift} />
-		<Route exact path="/managerview/updateshift" component={MgrShiftUp} />
+		{/* <Route exact path="/managerview/updateshift" component={MgrShiftUp} /> */}
         <Route exact path="/managerview/team" component={MgrTeam} />
         <Route exact path="/managerview/addshift" component={MgrAddShift} />
         <Route exact path="/managerview/manageshift" component={MgrShift} />

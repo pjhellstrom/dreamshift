@@ -8,5 +8,11 @@ export default {
   getTeam: function(id) {
 	  console.log(id);
     return axios.get("/api/shifts/"+id);
-  }
+  },
+
+	getEmployees: function(id) {
+		// console.log(id);
+		return axios.get("/api/user/manager/all/"+id);
+	}
+
 };
