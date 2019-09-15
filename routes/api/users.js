@@ -14,4 +14,7 @@ router.route("/manager/deleteuser/:id").delete(userController.remove);
 // Matches with "/employee/claimShift/:id"
 router.route("/employee/claimShift/:id").put(userController.claim);
 
+// Matches with "/manager/addemplpyee/"
+router.route("/manager/addemployee").post(userController.create);
+
 module.exports = router;
