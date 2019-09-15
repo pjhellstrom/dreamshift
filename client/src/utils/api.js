@@ -18,6 +18,11 @@ export default {
 	addEmployee: function(newEmp) {
 		// console.log(newEmp);
 		return axios.post("/api/user/manager/addemployee", newEmp);
+	},
+
+	addShift: function(newShift) {
+		// console.log(newShift);
+		return axios.post("/api/shifts/manager/addshift", newShift);
 	}
 
 };
