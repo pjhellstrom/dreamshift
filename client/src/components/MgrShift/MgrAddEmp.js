@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import API from "../../utils/api";
 
 
 class MgrAddEmp extends Component {
@@ -13,6 +14,7 @@ class MgrAddEmp extends Component {
 		phoneNumber: "",
 		username:"",
 		teamId: "5d77e45fb112c824efae3718",
+		isManager: false,
 
 		showAddEmp: false
 	};
@@ -41,22 +43,46 @@ class MgrAddEmp extends Component {
 
 	handleFormSubmit = event => {
 		event.preventDefault();
-		console.log(this.state)
+
+		const newEmp = {
+			firstName: this.state.firstName,
+			lastName: this.state.lastName,
+			location: this.state.location,
+			phoneNumber: this.state.phoneNumber,
+			username: this.state.username,
+			teamId: this.state.teamId,
+			isManager: this.state.isManager
+		};
+
+		API.addEmployee(newEmp)
+		.then(res =>
+			{
+				console.log(res.data);
+				this.setState({ employees: res.data })
+			}
+			)
+		.catch(err => console.log(err));
+		
+		// tried a few things to get form to clear, no luck, moving on
+		// had date setting to blank, but only location reflected change
+		// New User only shows on page after refresh, not immediately
 	};
 
 	showForm = () =>{
 		this.setState({ showAddEmp: this.state.showAddEmp ? false : true })
-	}
+	};
 
 	render() {
 		return (
 			<div>
 				<Card>
+
 					<Card.Header> 
 						<Button onClick={() => this.showForm()}>
 							<i className="fas fa-user-plus fa-2x"></i> Add Team Member
 						</Button>
 					</Card.Header>
+
 					<Card.Body style={ { display: this.state.showAddEmp ? '' : 'none' } }>
 
 						<form className="form">
@@ -98,7 +124,7 @@ class MgrAddEmp extends Component {
 								name="username"
 								onChange={this.handleInputChange}
 								type="text"
-								placeholder="e-Mail"
+								placeholder="Email"
 							/><br/>
 
 							<Button onClick={this.handleFormSubmit}>Submit</Button>
