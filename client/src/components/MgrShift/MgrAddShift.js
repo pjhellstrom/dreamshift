@@ -52,7 +52,6 @@ class MgrAddShift extends Component {
 		.then(res =>
 			{
 				console.log(res.data);
-				this.setState({ employees: res.data })
 			}
 			)
 		.catch(err => console.log(err));

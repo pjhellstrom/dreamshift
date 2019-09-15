@@ -23,6 +23,11 @@ export default {
 	addShift: function(newShift) {
 		// console.log(newShift);
 		return axios.post("/api/shifts/manager/addshift", newShift);
+	},
+
+	deleShift: function(id) {
+		// console.log(id);
+		return axios.delete("/api/shifts/manager/deleteshift/"+id);
 	}
 
 };
