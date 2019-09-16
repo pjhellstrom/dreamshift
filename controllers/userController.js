@@ -6,7 +6,7 @@ module.exports = {
     User.find({ teamId: req.params.id,
                 isManager : false})
       .sort({ lastName: -1 })
-      .populate("team")
+      .populate("shifts")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));   
   },
