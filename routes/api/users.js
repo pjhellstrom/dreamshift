@@ -5,6 +5,9 @@ const userController = require("../../controllers/userController");
 // Matches with "/manager" display all employee
 router.route("/manager/all/:id").get(userController.findAll);
 
+// Matches with "/manager" display all employee
+router.route("/manager/allPending/:id").get(userController.findAllPending);
+
 // Matches with "/employee/shifs/:id" display all employee
 router.route("/employee/shifts/:id").get(userController.findById);
 
