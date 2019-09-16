@@ -2,10 +2,12 @@ import axios from "axios";
 
 export default {
 
-  // getManager: function() {
-  //   return axios.get("/api/shifts/5d77e45fb112c824efae3718");
-  // }
+//get all shifts for one team by teamId
   getTeam: function(id) {
     return axios.get("/api/shifts/"+id);
-  }
+  },
+//Update one shift by shiftId
+  // UpdateTeamShift: function(id)
+  // return axios.
+
 };

@@ -33,16 +33,6 @@ class MgrShift extends Component {
 	}
 
 
-	// getData = (id) =>{
-	// 	API.getTeam(id)
-	// 	.then(res =>
-	// 		// console.log(res.data),
-	// 		this.setState({ teamInfo: res.data })
-	// 		)
-	// 	.catch(err => console.log(err));
-	// 	console.log("a value is "+ this.state.teamInfo);
-
-	// }
 
 	render() {
 		return (
