@@ -1,5 +1,5 @@
 import ShiftCard from '../EmpShift/ShiftCard';
-// import Moment from "react-moment"
+import Moment from "react-moment";
 import React, { Component } from "react";
 
 class Day extends Component {
@@ -7,7 +7,7 @@ class Day extends Component {
     render(){
         return(
         <div>
-            <h1>{this.props.date}</h1>
+            <h1><Moment format="MMM-DD-YYYY">{this.props.date}</Moment></h1>
             {this.props.shifts.map((s,i) => (
             <ShiftCard
             {...s} key={i}
