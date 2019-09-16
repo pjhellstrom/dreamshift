@@ -11,12 +11,14 @@ const User = new Schema({
   isManager: { type: Boolean, required: true },
   shifts: [
     {
-      type: String
+      type: Schema.Types.ObjectId,
+      ref : "Shift"
     }
   ],
   pendingShifts: [
     {
-      type: String
+      type: Schema.Types.ObjectId,
+      ref : "Shift"
     }
   ],
   teamId: { type: String, required: true }
