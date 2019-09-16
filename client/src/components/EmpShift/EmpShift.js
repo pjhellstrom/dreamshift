@@ -2,16 +2,30 @@
  import Day from "../Day/Day"
 import React, { Component } from "react";
 import EmpNav from "./EmpNav";
-// import ShiftCard from "./EmpShiftCard";
-// import shifts from "../../fakedata/shift.json";
-// import Axios from "axios";
-// import { STATES } from "mongoose";
-
-// componentWillMount = () => {
-//     Axios -> state.shift;
-// };
+import { sortShifts } from "../../utils/helper";
+import API from '../../utils/api';
 
 class EmpShift extends Component{
+    state = {
+        shifts: []
+    }
+
+    componentWillMount(){
+        API.getTeam("5d77e45fb112c824efae3718")
+        .then(res =>
+    {
+    console.log(res.data);
+    let sortedData = sortShifts(res.data);
+    console.log(sortedData);
+    this.setState({ shifts: sortedData }, () => console.log("a value is "+ this.state.shifts));
+    }
+    )
+.catch(err => console.log(err));
+
+}
+    claimShift = (id) =>{
+        console.log(id)
+    }
   render(){
     return(
       <div>
@@ -20,7 +34,10 @@ class EmpShift extends Component{
           <h1>Employee Page</h1>
           
         </div>
-        <Day />
+        {this.state.shifts.map((s,i) => (
+        <Day {...s} key={i}/>
+        ))}
+     
         
       </div>
     );
