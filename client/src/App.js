@@ -7,12 +7,13 @@ import LandingPage from "./components/pages/LandingPage";
 
 //Employee Pages
 import EmpShift from "./components/EmpShift/EmpShift";
-
+import EmpMyShift from "./components/EmpShift/EmpMyShift"
 //Manager Pages
 import MgrShift from "./components/MgrShift/MgrShift";
 import MgrTeam from "./components/MgrShift/MgrTeam";
 import MgrAddShift from "./components/MgrShift/MgrAddShift";
 import MgrShiftUp from "./components/MgrShift/MgrShiftUp";
+
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
         <Route exact path="/managerview/addshift" component={MgrAddShift} />
         <Route exact path="/managerview/manageshift" component={MgrShift} />
         <Route exact path="/employeeview" component={EmpShift} />
-		<Route exact path="/employeeview/MyShift" component={EmpShift} />
+		<Route exact path="/employeeview/EmpMyShift" component={EmpMyShift} />
         {/* <Route path="/contact" component={Contact} /> */}
       </div>
     </Router>
