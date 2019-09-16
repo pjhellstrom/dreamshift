@@ -36,8 +36,9 @@ function MgrNav() {
 			<li className="nav-item">
 				<Link
 					to="/logout"
-					className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}
+					className={window.location.pathname === "/api/auth/logout" ? "nav-link active" : "nav-link"}
 				>
+					  {/* // "/api/auth/logout" */}
 					<i className="fas fa-door-open fa-2x"></i>
 				</Link>
 			</li>
