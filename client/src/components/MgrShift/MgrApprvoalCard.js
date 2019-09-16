@@ -8,23 +8,12 @@ class MgrApprovalCard extends Component{
 		showconfirm: false,
 	};
 
-	deleEmp = (id) =>{
-		this.setState({ showconfirm: this.state.showconfirm ? false : true })
+	approve = (id) =>{
 		console.log(id)
 	}
 
-	confirmDele = (id) =>{
+	reject = (id) =>{
 		console.log(id)
-		API.deleEmployee(id)
-		.then(res =>
-			{
-				console.log(res.data);
-			})
-		.catch(err => console.log(err));
-	}
-
-	noDele = () =>{
-		this.setState({ showconfirm: this.state.showconfirm ? false : true })
 	}
 
 	render(){
@@ -46,6 +35,8 @@ class MgrApprovalCard extends Component{
 								(shift, i) => (
 									<Card.Text key={i}>
 										<b>Shift:</b> {shift}
+										<Button variant="outline-primary" onClick={() => this.approve(shift)}>Approve</Button>
+										<Button variant="outline-danger" onClick={() => this.reject(shift)}>Reject</Button>
 									</Card.Text>
 
 									// <MgrApprovalCard
