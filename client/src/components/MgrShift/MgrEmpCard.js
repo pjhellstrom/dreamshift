@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import API from "../../utils/api";
 
-// const MgrEmpCard = (this.props) => {
 class MgrEmpCard extends Component{
 	state = {
 		showconfirm: false,
@@ -15,7 +15,12 @@ class MgrEmpCard extends Component{
 
 	confirmDele = (id) =>{
 		console.log(id)
-		// add method to dele emp here
+		API.deleEmployee(id)
+		.then(res =>
+			{
+				console.log(res.data);
+			})
+		.catch(err => console.log(err));
 	}
 
 	noDele = () =>{

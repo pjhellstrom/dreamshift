@@ -10,6 +10,8 @@ export default {
 		return axios.get("/api/shifts/"+id);
 	},
 
+
+	// Manager API Calls for Employees
 	getEmployees: function(id) {
 		// console.log(id);
 		return axios.get("/api/user/manager/all/"+id);
@@ -20,6 +22,12 @@ export default {
 		return axios.post("/api/user/manager/addemployee", newEmp);
 	},
 
+	deleEmployee: function(id) {
+		// console.log(id);
+		return axios.delete("/api/user/manager/deleteuser/" + id);
+	},
+
+	// Manager API Calls for Shifts
 	addShift: function(newShift) {
 		// console.log(newShift);
 		return axios.post("/api/shifts/manager/addshift", newShift);
