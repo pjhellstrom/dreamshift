@@ -46,5 +46,12 @@ export default {
 	//Employee API Calls for shifts
 	getEmpShift: function (id){
 		return axios.get("/api/user/employee/shifts/"+id);
+	},
+
+	//Employee API Calls for shifts
+	getEmpShiftPending: function (id){
+		return axios.get("/api/user/employee/pendingShifts/"+id);
 	}
+
+
 };
