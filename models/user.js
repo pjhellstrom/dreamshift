@@ -14,6 +14,11 @@ const User = new Schema({
       type: String
     }
   ],
+  pendingShifts: [
+    {
+      type: String
+    }
+  ],
   teamId: { type: String, required: true }
 });
 
