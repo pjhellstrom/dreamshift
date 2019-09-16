@@ -45,18 +45,3 @@ class EmpShift extends Component{
 }
 
 export default EmpShift;
-
-// class EmpShift extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <h1>employee view</h1>
-//                 <Day>
-//                     sept 6
-//                 </Day>
-//             </div>
-
-//         )
-//     }
-// }
-// export default EmpShift;
