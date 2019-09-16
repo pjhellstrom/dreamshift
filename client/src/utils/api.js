@@ -19,7 +19,8 @@ export default {
 
 	addEmployee: function(newEmp) {
 		// console.log(newEmp);
-		return axios.post("/api/user/manager/addemployee", newEmp);
+		// return axios.post("/api/user/manager/addemployee", newEmp);
+		return axios.post("/api/auth/register", newEmp);
 	},
 
 	deleEmployee: function(id) {
