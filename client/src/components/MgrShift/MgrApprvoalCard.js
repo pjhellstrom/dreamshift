@@ -29,43 +29,47 @@ class MgrApprovalCard extends Component{
 
 	render(){
 		console.log("Approval Card")
-		console.log(this.props)
-		return (
-			<div className="card">
+		console.log(this.props.pendingShifts)
+		console.log(this.props.pendingShifts.length)
+		if (this.props.pendingShifts.length > 0) {
+			return (
+				<div className="card">
 
-				<Card id={`${this.props._id}`} >
-					<Card.Header>{this.props.firstName} {this.props.lastName}</Card.Header>
-					<Card.Body>
-						{console.log(this.props.pendingShifts)}
+					<Card id={`${this.props._id}`} >
+						<Card.Header>{this.props.firstName} {this.props.lastName}</Card.Header>
+						<Card.Body>
+							{/* {console.log(this.props.pendingShifts)} */}
 
-						{this.props.pendingShifts.map(
-						// console.log(this.state.employees),
-						
-							(shift, i) => (
-								<Card.Text key={i}>
-									<b>Shift:</b> {shift}
+							{this.props.pendingShifts.map(
+							// console.log(this.state.employees),
+							
+								(shift, i) => (
+									<Card.Text key={i}>
+										<b>Shift:</b> {shift}
+									</Card.Text>
+
+									// <MgrApprovalCard
+									// 	{...employees} // Breaks out employee data for rendering each card
+									// 	key={i} // Gives each card a react key i
+									// />
+								)
+							)}
+							{/* {this.props.pendingShifts.each(
+								<Card.Text>
+									<b>Shift:</b> Test <br/>
 								</Card.Text>
+							)} */}
+							{/* <Button variant="outline-warning" onClick={() => this.deleEmp(this.props._id)}>Remove Employee</Button> */}
+						</Card.Body>
+						<Card.Footer >
+							
+						</Card.Footer>
+					</Card>
 
-								// <MgrApprovalCard
-								// 	{...employees} // Breaks out employee data for rendering each card
-								// 	key={i} // Gives each card a react key i
-								// />
-							)
-						)}
-						{/* {this.props.pendingShifts.each(
-							<Card.Text>
-								<b>Shift:</b> Test <br/>
-							</Card.Text>
-						)} */}
-						{/* <Button variant="outline-warning" onClick={() => this.deleEmp(this.props._id)}>Remove Employee</Button> */}
-					</Card.Body>
-					<Card.Footer >
-						
-					</Card.Footer>
-				</Card>
-
-			</div>
-		);
+				</div>
+			);
+		}
+		else {return("");}
 	}
 }
 
