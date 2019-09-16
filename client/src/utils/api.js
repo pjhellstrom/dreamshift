@@ -36,6 +36,9 @@ export default {
 	deleShift: function(id) {
 		// console.log(id);
 		return axios.delete("/api/shifts/manager/deleteshift/"+id);
+	},
+	updateShift: function(id) {
+		return axios.put("/api/user/employee/claimShift/"+id);
 	}
 
 };
