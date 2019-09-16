@@ -11,8 +11,8 @@ function EmpNav() {
 			</li>
 			<li className="nav-item">
 				<Link
-					to="/employeeview"
-					className={window.location.pathname === "/employeeview/MyShift" ? "nav-link active" : "nav-link"}
+					to="/employeeview/EmpMyShift"
+					className={window.location.pathname === "/employeeview/EmpMyShift" ? "nav-link active" : "nav-link"}
 				>
 					<i className="fas fa-calendar-check fa-2x"></i>
 				</Link>
