@@ -8,11 +8,18 @@ module.exports = {
       .sort({ lastName: -1 })
       .populate("team")
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));   
+      .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
     User.findById(req.params.id)
       .populate("shifts")
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  
+  findByIdPending: function(req, res) {
+    User.findById(req.params.id)
+      .populate("pendingShifts")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
