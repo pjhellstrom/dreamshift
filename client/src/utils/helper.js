@@ -2,7 +2,7 @@ exports.sortShifts = (arr) => {
     let listDays = [];
     for (let i = 0; i < arr.length; i++) {
         if (!listDays.includes(arr[i].date)) {
-            listDays.push(arr[i].date);
+            listDays.unshift(arr[i].date);
         }
     }
     let newArr = [];
