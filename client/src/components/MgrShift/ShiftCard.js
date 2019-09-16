@@ -4,6 +4,9 @@ import Button from 'react-bootstrap/Button';
 import MgrShiftUP from './MgrShiftUp';
 import API from "../../utils/api";
 
+import Moment from 'react-moment';
+import moment from "moment";
+
 
 class ShiftCard extends Component{
 	state = {
@@ -46,8 +49,10 @@ class ShiftCard extends Component{
 					<Card.Body>
 						
 						<Card.Text>
-							<b>Date:</b> {this.props.date}<br/>
-							<b>Time:</b> {this.props.start} to {this.props.end}<br/>
+							<b>Date:</b> <Moment format="MMM-DD-YYYY">{this.props.date}</Moment><br/>
+							<b>Time:</b> 
+								{this.props.start} to 
+								{this.props.end}<br/>
 							<b>Location:</b> {this.props.location}<br/>
 							<Button variant="outline-success" onClick={() => this.updateShift(this.props.shiftid)}>Update</Button>
 							<Button variant="outline-warning" onClick={() => this.deleShift(this.props.shiftid)}>Remove</Button>
