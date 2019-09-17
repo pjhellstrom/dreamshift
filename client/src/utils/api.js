@@ -1,4 +1,5 @@
 import axios from "axios";
+import { PromiseProvider } from "mongoose";
 
 export default {
   authUser: function(activeUser) {
@@ -51,6 +52,11 @@ export default {
     return axios.delete("/api/shifts/manager/deleteshift/" + id);
   },
 
+  fillShift: function(id) {
+    console.log("In fillShift FE router with id: ", id);
+    return axios.put("/api/shifts/manager/fillShift/" + id);
+  },
+
   updateShift: function(id, req) {
 		console.log("geting in update",id,req);
 		return axios.put("/api/user/employee/claimShift/"+ id, req);
@@ -64,5 +70,29 @@ export default {
   //Employee API Calls for pending shifts
   getEmpShiftPending: function(id) {
     return axios.get("/api/user/employee/pendingShifts/" + id);
+  },
+
+  approveShift: function(userId, shiftId) {
+    console.log(
+      "In approveShift FE router with userId: ",
+      userId,
+      " shiftId: ",
+      shiftId
+    );
+    return axios.put("/api/user/employee/approveShift/" + userId, shiftId);
+  },
+
+  declineShift: function(userId, shiftId) {
+    console.log(
+      "In approveShift FE router with userId: ",
+      userId,
+      " shiftId: ",
+      shiftId
+    );
+    return axios.put("/api/user/employee/declineShift/" + userId, shiftId);
+  },
+
+  pushShift: function(userId, shiftId) {
+    return axios.put("/api/user/employee/approveShiftPush/" + userId, shiftId);
   }
 };

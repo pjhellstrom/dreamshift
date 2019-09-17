@@ -12,13 +12,13 @@ const User = new Schema({
   shifts: [
     {
       type: Schema.Types.ObjectId,
-      ref : "Shift"
+      ref: "Shift"
     }
   ],
   pendingShifts: [
     {
       type: Schema.Types.ObjectId,
-      ref : "Shift"
+      ref: "Shift"
     }
   ],
   teamId: { type: String, required: true }
