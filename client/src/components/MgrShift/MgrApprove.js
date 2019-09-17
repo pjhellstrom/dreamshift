@@ -7,25 +7,22 @@ import MgrApprovalCard from "./MgrApprvoalCard";
 
 class MgrApprove extends Component {
 	state= {
+		teamId: "",
 		employees:[],
 	}
 
-	// componentWillMount(){
-	// 	console.log("Approval Page Mounting")
-	// 	API.getPending("5d77e45fb112c824efae3718")
-	// 	.then(res =>
-	// 		{
-	// 			console.log(res.data);
-	// 			this.setState({ employees: res.data })
-	// 		}
-	// 		)
-	// 	.catch(err => console.log(err));
-	// }
+	componentWillMount() {
+    this.setState({
+      // userId: this.props.userId,
+      teamId: this.props.teamId,
+      // isManager: this.props.isManager
+    });
+  }
 
-	componentWillMount(){
+
+	componentDidMount(){
 		console.log("Approval Page Mounting")
-		// API.getEmployees("5d77e45fb112c824efae3718")
-		API.getPending("5d77e45fb112c824efae3718")
+		API.getPending(this.state.teamId)
 		.then(res =>
 			{
 				console.log(res.data);
@@ -46,8 +43,8 @@ class MgrApprove extends Component {
 
 					{this.state.employees.map(
 						// console.log(this.state.employees),
-						
-						
+
+
 						(employees, i) => (
 
 							// console.log(employees),
@@ -62,7 +59,7 @@ class MgrApprove extends Component {
 					)}
 
 				</div>
-				
+
 			</div>
 		);
 	}

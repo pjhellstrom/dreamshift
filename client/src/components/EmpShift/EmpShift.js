@@ -11,7 +11,8 @@ class EmpShift extends Component{
     //     shifts: [],
     //     userId: "5d7fd3766e00d10cec6bcc82",
     //     pendingShifts: [],
-    //     approvedShifts: []
+    //     approvedShifts: [],
+    //     teamId: "5d77e45fb112c824efae3718"
     // }
 
   state = {
