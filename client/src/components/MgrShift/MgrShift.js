@@ -6,11 +6,14 @@ import API from "../../utils/api";
 
 class MgrShift extends Component {
   state = {
+    userId: "",
     teamId: "",
+    isManager: "",
     teamInfo: []
   };
 
   componentWillMount() {
+    console.log("MgrShift componentWillMount called");
     this.setState({
       userId: this.props.userId,
       teamId: this.props.teamId,
@@ -19,6 +22,7 @@ class MgrShift extends Component {
   }
 
   componentDidMount() {
+    console.log("MgrShift componentDidMount called");
     API.getTeam(this.state.teamId)
       .then(res => {
         console.log(res.data);

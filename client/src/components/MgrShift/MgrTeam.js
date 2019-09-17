@@ -11,6 +11,7 @@ class MgrTeam extends Component {
   };
 
   componentWillMount() {
+    console.log("MgrTeam componentWillMount called");
     this.setState({
       teamId: this.props.teamId
     });
