@@ -19,7 +19,7 @@ const ShiftCard = (props) => {
 						<b>Time:</b> {props.start} to {props.end}<br/>
                         <b>Location:</b> {props.location}<br/>
                         <b>Description:</b> {props.description}<br/>
-                        <Button variant="outline-success" onClick={() => props.claimShift(props.shiftid)}>CLAIM SHIFT</Button>
+                        <Button variant="outline-success" onClick={() => props.claimShift(props._id)}>CLAIM SHIFT</Button>
 					</Card.Text>
 				</Card.Body>
 			</Card>
