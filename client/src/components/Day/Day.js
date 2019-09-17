@@ -10,12 +10,16 @@ class Day extends Component {
         return(
         <div>
             <h1><Moment format="MMM-DD-YYYY">{this.props.date}</Moment></h1>
-            {this.props.shifts.map((s,i) => (
+            {/* {this.props.shifts.map((s,i) => (
             <ShiftCard
             {...s} key={i} claimShift={this.props.claimShift}
-            //{...claimShift(id)}
             />
-        )) }
+        )) } */}
+        {
+            this.props.shifts.map((shift,index) => (
+                <ShiftCard {...shift} index = {index} num={this.props.keys} value = {this.props.addShift}/>)
+                )
+        }
         {/* {this.getData("5d77e45fb112c824efae3718")} */}
         </div>
 
