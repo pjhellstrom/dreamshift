@@ -40,7 +40,10 @@ class MgrTeam extends Component {
             />
           ))}
 
-          <MgrAddEmp />
+          <MgrAddEmp
+            teamId={this.state.teamId}
+            isManager={this.state.isManager}
+          />
         </div>
         {/* <i className="fas fa-user-plus"></i> Add New Team Member (non-func) */}
       </div>
