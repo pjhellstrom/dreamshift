@@ -5,7 +5,7 @@ import MgrShiftUP from './MgrShiftUp';
 import API from "../../utils/api";
 
 import Moment from 'react-moment';
-import moment from "moment";
+// import moment from "moment";
 
 
 class ShiftCard extends Component{

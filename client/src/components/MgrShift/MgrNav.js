@@ -27,16 +27,17 @@ function MgrNav() {
 			</li>
 			<li className="nav-item">
 				<Link
-					to="/managerview"
-					className={window.location.pathname === "/managerview/manageshift" ? "nav-link active" : "nav-link"}
+					to="/managerview/approve"
+					className={window.location.pathname === "/managerview/approve" ? "nav-link active" : "nav-link"}
 				>
 					<i className="fas fa-calendar-check fa-2x"></i>
+					{/* path="/managerview/approve" component={MgrApprove} */}
 				</Link>
 			</li>
 			<li className="nav-item">
 				<Link
 					to="/logout"
-					className={window.location.pathname === "/api/auth/logout" ? "nav-link active" : "nav-link"}
+					className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}
 				>
 					  {/* // "/api/auth/logout" */}
 					<i className="fas fa-door-open fa-2x"></i>

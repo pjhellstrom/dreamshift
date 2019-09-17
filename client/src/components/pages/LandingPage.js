@@ -41,7 +41,7 @@ class LandingPage extends Component {
 					/><br/>
 
 					<input
-						value={this.state.name}
+						value={this.state.password}
 						name="password"
 						onChange={this.handleInputChange}
 						type="password"

@@ -9,6 +9,7 @@ class MgrAddEmp extends Component {
 	// Setting the component's initial state
 	state = {
 		firstName: "",
+		password: "",
 		lastName: "",
 		location: "",
 		phoneNumber: "",
@@ -46,6 +47,7 @@ class MgrAddEmp extends Component {
 
 		const newEmp = {
 			firstName: this.state.firstName,
+			password: this.state.password,
 			lastName: this.state.lastName,
 			location: this.state.location,
 			phoneNumber: this.state.phoneNumber,
@@ -53,11 +55,12 @@ class MgrAddEmp extends Component {
 			teamId: this.state.teamId,
 			isManager: this.state.isManager
 		};
-
+		console.log(newEmp)
 		API.addEmployee(newEmp)
 		.then(res =>
 			{
-				console.log(res.data);
+				// console.log(res.data); = This gives back garbage data right now
+				console.log("user created");
 			}
 			)
 		.catch(err => console.log(err));
@@ -124,6 +127,14 @@ class MgrAddEmp extends Component {
 								onChange={this.handleInputChange}
 								type="text"
 								placeholder="Email"
+							/><br/>
+
+							<input
+								value={this.state.password}
+								name="password"
+								onChange={this.handleInputChange}
+								type="password"
+								placeholder="New User Password"
 							/><br/>
 
 							<Button onClick={this.handleFormSubmit}>Submit</Button>
