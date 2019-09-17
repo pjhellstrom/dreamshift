@@ -17,7 +17,7 @@ class MgrAddEmp extends Component {
     showAddEmp: false
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this.setState({
       teamId: this.props.teamId
     });
@@ -47,7 +47,7 @@ class MgrAddEmp extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-
+    console.log(this.state);
     const newEmp = {
       firstName: this.state.firstName,
       password: this.state.password,
