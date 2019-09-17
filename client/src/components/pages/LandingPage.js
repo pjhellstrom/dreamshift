@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import api from "../utils/api";
 import Button from "react-bootstrap/Button";
+import Card from 'react-bootstrap/Card';
 import API from "../../utils/api";
+import "./style.css";
 
 class LandingPage extends Component {
   state = {
@@ -58,50 +60,34 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h1>Landing Page</h1>
-        </div>
-        <form className="form">
-          <input
-            value={this.state.username}
-            name="username"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="Enter Your Email"
-          />
-          <br />
-          Password
-          <input
-            value={this.state.password}
-            name="password"
-            onChange={this.handleInputChange}
-            type="password"
-            placeholder="Enter Your Password"
-          />
-          <br />
-          <button onClick={this.handleFormSubmit}>Submit</button>
-        </form>
-        <br />
-        <button className="btn btn-primary">
-          <Link
-            to="/managerview"
-            className={window.location.pathname === "/managerview"}
-            style={{ color: "white" }}
-          >
-            Login As Manager
-          </Link>
-        </button>
-        <button className="btn btn-primary">
-          <Link
-            to="/employeeview"
-            className={window.location.pathname === "/employeeview"}
-            style={{ color: "white" }}
-          >
-            Login As Employee
-          </Link>
-        </button>
-      </div>
+		<div className="background">
+			<Card id="maincard">
+				<Card.Header id="headcard"><h1 id="sitetitle">Dream Shift</h1></Card.Header>
+				<Card.Body id="cardbody">
+					<form className="form">
+						<input
+							value={this.state.username}
+							name="username"
+							onChange={this.handleInputChange}
+							type="text"
+							placeholder="Enter Your Email"
+						/>
+						<br />
+					
+						<input
+							value={this.state.password}
+							name="password"
+							onChange={this.handleInputChange}
+							type="password"
+							placeholder="Enter Your Password"
+						/>
+						<br />
+						<Button variant="primary" onClick={this.handleFormSubmit}>Log In</Button>
+					</form>
+				</Card.Body>
+
+			</Card>
+		</div>
     );
   }
 }
