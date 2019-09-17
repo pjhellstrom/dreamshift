@@ -11,26 +11,17 @@ class MgrApprove extends Component {
 		teamId: ""
 	}
 
-	// componentWillMount(){
-	// 	console.log("Approval Page Mounting")
-	// 	API.getPending("5d77e45fb112c824efae3718")
-	// 	.then(res =>
-	// 		{
-	// 			console.log(res.data);
-	// 			this.setState({ employees: res.data })
-	// 		}
-	// 		)
-	// 	.catch(err => console.log(err));
-	// }
-
 	componentWillMount(){
-		console.log("Approval Page Mounting")
 		this.setState({
 			teamId: this.props.teamId
 		});
 		// API.getEmployees("5d77e45fb112c824efae3718")
 		//API.getPending("5d77e45fb112c824efae3718") // Test team ID
 		// API.getPending("5d81035a81e5aa8ede795ed1") // pika@chu.ca manager
+
+	}
+
+  componentDidMount() {
 		API.getPending(this.state.teamId) //Trying to use state team ID
 		.then(res =>
 			{
@@ -41,8 +32,6 @@ class MgrApprove extends Component {
 		.catch(err => console.log(err));
 	}
 
-
-
 	render() {
 		return (
 			<div>
@@ -52,8 +41,8 @@ class MgrApprove extends Component {
 
 					{this.state.employees.map(
 						// console.log(this.state.employees),
-						
-						
+
+
 						(employees, i) => (
 
 							// console.log(employees),
@@ -68,7 +57,7 @@ class MgrApprove extends Component {
 					)}
 
 				</div>
-				
+
 			</div>
 		);
 	}
