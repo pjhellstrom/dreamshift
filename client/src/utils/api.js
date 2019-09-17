@@ -11,11 +11,11 @@ export default {
   // getManager: function() {
   //   return axios.get("/api/shifts/5d77e45fb112c824efae3718");
   // }
+
   getTeam: function(id) {
     console.log(id);
     return axios.get("/api/shifts/" + id);
   },
-
   // Manager API Calls for Employees
   getEmployees: function(id) {
     // console.log(id);
@@ -52,8 +52,9 @@ export default {
   },
 
   updateShift: function(id, req) {
-    return axios.put("/api/user/employee/claimShift/" + id, req);
-  },
+		console.log("geting in update",id,req);
+		return axios.put("/api/user/employee/claimShift/"+ id, req);
+	},
 
   //Employee API Calls for shifts
   getEmpShift: function(id) {

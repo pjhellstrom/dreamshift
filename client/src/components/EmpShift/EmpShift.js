@@ -5,22 +5,43 @@ import EmpNav from "./EmpNav";
 import { sortShifts } from "../../utils/helper";
 import API from "../../utils/api";
 
-class EmpShift extends Component {
-  state = {
-    shifts: [],
-    teamId: "",
-    userId: "",
-    pendingShifts: [],
-    approvedShifts: []
-  };
 
-  componentWillMount() {
-    this.setState({
-      teamId: this.props.teamId,
-      userId: this.props.userId
-    });
-  }
+class EmpShift extends Component{
+    state = {
+        shifts: [],
+        userId: "5d7fd3766e00d10cec6bcc82",
+        pendingShifts: [],
+        approvedShifts: []
+    }
 
+//   state = {
+//     shifts: [],
+//     teamId: "",
+//     userId: "",
+//     pendingShifts: [],
+//     approvedShifts: []
+//   };
+
+
+//   componentWillMount() {
+//     this.setState({
+//       teamId: this.props.teamId,
+//       userId: this.props.userId
+//     });
+//   }
+
+
+    claimShift = (num,id) =>{
+        console.log(num,id, "shifts",this.state.shifts,this.state.shifts[num].shifts[id]._id);
+        const pending = {"pendingShifts": this.state.shifts[num].shifts[id]._id};
+        API.updateShift(this.state.userId, pending)
+        .then(res =>
+          {
+            console.log(res.data);
+          //  console.log(__id);
+          })
+        .catch(err => console.log(err));
+        }
   componentDidMount() {
     API.getTeam(this.state.teamId)
       .then(res => {
@@ -32,25 +53,6 @@ class EmpShift extends Component {
         );
       })
       .catch(err => console.log(err));
-  }
-
-  claimShift = id => {
-    console.log();
-    console.log(id);
-    //   console.log(userId);
-    // claim: function(req, res) {
-    //     User.updateOne({ _id: req.params.id }, { $push: req.body })
-    //       .then(dbModel => res.json(dbModel))
-    //       .catch(err => res.status(422).json(err));
-    //   },
-    // API.updateShift(this.state.userId, {"pendingShifts":__id})
-
-    // .then(res =>
-    // 	{
-    //         console.log(res.data);
-    //         console.log(__id);
-    // 	})
-    // .catch(err => console.log(err));
   };
   render() {
     return (
@@ -59,8 +61,9 @@ class EmpShift extends Component {
         <div>
           <h1>Employee Page</h1>
         </div>
-        {this.state.shifts.map((s, i) => (
-          <Day {...s} key={i} claimShift={this.claimShift} />
+        {this.state.shifts.map((s,index) => (
+        <Day {...s} keys={index} addShift={this.claimShift}/>
+
         ))}
       </div>
     );
