@@ -7,28 +7,29 @@ import API from "../../utils/api";
 
 
 class EmpShift extends Component{
-    state = {
-        shifts: [],
-        userId: "5d7fd3766e00d10cec6bcc82",
-        pendingShifts: [],
-        approvedShifts: []
-    }
+    // state = {
+    //     shifts: [],
+    //     userId: "5d7fd3766e00d10cec6bcc82",
+    //     pendingShifts: [],
+    //     approvedShifts: [],
+    //     teamId: "5d77e45fb112c824efae3718"
+    // }
 
-//   state = {
-//     shifts: [],
-//     teamId: "",
-//     userId: "",
-//     pendingShifts: [],
-//     approvedShifts: []
-//   };
+  state = {
+    shifts: [],
+    teamId: "",
+    userId: "",
+    pendingShifts: [],
+    approvedShifts: []
+  };
 
 
-//   componentWillMount() {
-//     this.setState({
-//       teamId: this.props.teamId,
-//       userId: this.props.userId
-//     });
-//   }
+  componentWillMount() {
+    this.setState({
+      teamId: this.props.teamId,
+      userId: this.props.userId
+    });
+  }
 
 
     claimShift = (num,id) =>{
