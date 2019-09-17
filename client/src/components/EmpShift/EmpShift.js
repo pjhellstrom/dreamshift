@@ -31,7 +31,6 @@ class EmpShift extends Component{
 //   }
 
 
-}
     claimShift = (num,id) =>{
         console.log(num,id, "shifts",this.state.shifts,this.state.shifts[num].shifts[id]._id);
         const pending = {"pendingShifts": this.state.shifts[num].shifts[id]._id};
@@ -43,9 +42,6 @@ class EmpShift extends Component{
           })
         .catch(err => console.log(err));
         }
-  render(){
-    return(
-
   componentDidMount() {
     API.getTeam(this.state.teamId)
       .then(res => {
@@ -57,7 +53,7 @@ class EmpShift extends Component{
         );
       })
       .catch(err => console.log(err));
-  }
+  };
   render() {
     return (
       <div>
