@@ -21,7 +21,6 @@ class MgrAddEmp extends Component {
     this.setState({
       teamId: this.props.teamId
     });
-    console.log("In MgrAddEmp component: ", PropTypes);
   }
 
   // REAL DATA
