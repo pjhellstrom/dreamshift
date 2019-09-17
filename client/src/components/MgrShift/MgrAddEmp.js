@@ -17,7 +17,7 @@ class MgrAddEmp extends Component {
     showAddEmp: false
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
       teamId: this.props.teamId
     });
