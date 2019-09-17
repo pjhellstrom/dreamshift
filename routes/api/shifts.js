@@ -22,8 +22,6 @@ router.route("/manager/shift/:id").put(shiftController.update);
 // Matches with "/manager/:id" delete shift
 router.route("/manager/deleteshift/:id").delete(shiftController.remove);
 
-
-
-
+router.route("/manager/fillShift/:id").put(shiftController.fill);
 
 module.exports = router;

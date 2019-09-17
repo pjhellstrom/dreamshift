@@ -23,6 +23,15 @@ router.route("/manager/deleteuser/:id").delete(userController.remove);
 // Matches with "/employee/claimShift/:id"
 router.route("/employee/claimShift/:id").put(userController.claim);
 
+// Matches with "/employee/approveShift/:id"
+router.route("/employee/approveShift/:id").put(userController.approveShift);
+
+// Matches with "/employee/approveShift/:id"
+router.route("/employee/approveShiftPush/:id").put(userController.pushShift);
+
+// Matches with "/employee/declineShift/:id"
+router.route("/employee/declineShift/:id").put(userController.declineShift);
+
 // Matches with "/manager/addemplpyee/"
 router.route("/manager/addemployee").post(userController.create);
 

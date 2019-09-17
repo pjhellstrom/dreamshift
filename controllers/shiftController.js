@@ -3,7 +3,7 @@ const Shift = require("../models/shift");
 // Defining methods for the shiftController
 module.exports = {
   findAll: function(req, res) {
-    Shift.find({teamId : req.params.id})
+    Shift.find({ teamId: req.params.id })
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -20,6 +20,15 @@ module.exports = {
   },
   update: function(req, res) {
     Shift.updateOne({ _id: req.params.id }, req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  fill: function(req, res) {
+    console.log(
+      "In BE shiftController fill method with req.params.id: ",
+      req.params.id
+    );
+    Shift.updateOne({ _id: req.params.id }, { $inc: { claimed: 1 } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
