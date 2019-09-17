@@ -4,47 +4,52 @@ import MgrEmpCard from "./MgrEmpCard";
 import API from "../../utils/api";
 import MgrAddEmp from "./MgrAddEmp";
 
-
 class MgrTeam extends Component {
-	state= {
-		employees:[],
-	}
+  state = {
+    teamId: "",
+    employees: []
+  };
 
-	componentWillMount(){
-		console.log("Team Page Mounting")
-		API.getEmployees("5d77e45fb112c824efae3718")
-		.then(res =>
-			{
-				console.log(res.data);
-				this.setState({ employees: res.data })
-			}
-			)
-		.catch(err => console.log(err));
-	}
+  componentWillMount() {
+    console.log("MgrTeam componentWillMount called");
+    this.setState({
+      teamId: this.props.teamId
+    });
+  }
 
-	render() {
-		return (
-			<div>
-				<MgrNav/>
-				<div>
-					<h1>Manage Team</h1>
+  componentDidMount() {
+    console.log("Team Page Mounting");
+    API.getEmployees(this.state.teamId)
+      .then(res => {
+        console.log(res.data);
+        this.setState({ employees: res.data });
+      })
+      .catch(err => console.log(err));
+  }
 
-					{this.state.employees.map(
-						(employees, i) => (
-							<MgrEmpCard
-								{...employees} // Breaks out shifts data for rendering each card
-								key={i} // Gives each card a react key i
-							/>
-						)
-					)}
+  render() {
+    return (
+      <div>
+        <MgrNav />
+        <div>
+          <h1>Manage Team</h1>
 
-					<MgrAddEmp/>
+          {this.state.employees.map((employees, i) => (
+            <MgrEmpCard
+              {...employees} // Breaks out shifts data for rendering each card
+              key={i} // Gives each card a react key i
+            />
+          ))}
 
-				</div>
-				{/* <i className="fas fa-user-plus"></i> Add New Team Member (non-func) */}
-			</div>
-		);
-	}
+          <MgrAddEmp
+            teamId={this.state.teamId}
+            isManager={this.state.isManager}
+          />
+        </div>
+        {/* <i className="fas fa-user-plus"></i> Add New Team Member (non-func) */}
+      </div>
+    );
+  }
 }
 
 export default MgrTeam;

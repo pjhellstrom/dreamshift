@@ -1,8 +1,8 @@
-import React  from 'react';
+import React from "react";
 // import Date from "./Date";
 // import EmpShift from "./EmpShift";
 import Card from "react-bootstrap/Card";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import Moment from "react-moment";
 import API from "../../utils/api";
 

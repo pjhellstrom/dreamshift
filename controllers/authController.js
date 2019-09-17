@@ -49,9 +49,14 @@ authController.login = function(req, res) {
 
 // Post login
 authController.doLogin = function(req, res) {
+  console.log("In authController.doLogin");
+  console.log(req.body);
   passport.authenticate("local")(req, res, function() {
     console.log("Login action successful!");
-    res.redirect("/");
+    // console.log(res.req.user._id);
+    // console.log(res.req.user.teamId);
+    // console.log(res.req.user.isManager);
+    res.json(req.user);
   });
 };
 
