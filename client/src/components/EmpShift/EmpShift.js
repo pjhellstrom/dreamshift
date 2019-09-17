@@ -1,5 +1,5 @@
 // import "./style.css";
- import Day from "../Day/Day"
+import Day from "../Day/Day"
 import React, { Component } from "react";
 import EmpNav from "./EmpNav";
 import { sortShifts } from "../../utils/helper";
@@ -7,7 +7,10 @@ import API from '../../utils/api';
 
 class EmpShift extends Component{
     state = {
-        shifts: []
+        shifts: [],
+        userId: "5d7fc54b661e1588acbf04e2",
+        pendingShifts: [],
+        approvedShifts: []
     }
 
     componentWillMount(){
@@ -24,7 +27,22 @@ class EmpShift extends Component{
 
 }
     claimShift = (id) =>{
+        console.log();
         console.log(id)
+     //   console.log(userId);
+// claim: function(req, res) {
+//     User.updateOne({ _id: req.params.id }, { $push: req.body })
+//       .then(dbModel => res.json(dbModel))
+//       .catch(err => res.status(422).json(err));
+//   },
+        // API.updateShift(this.state.userId, {"pendingShifts":__id})
+        
+        // .then(res =>
+		// 	{
+        //         console.log(res.data);
+        //         console.log(__id);
+		// 	})
+		// .catch(err => console.log(err));
     }
   render(){
     return(
@@ -35,7 +53,7 @@ class EmpShift extends Component{
           
         </div>
         {this.state.shifts.map((s,i) => (
-        <Day {...s} key={i}/>
+        <Day {...s} key={i} claimShift={this.claimShift}/>
         ))}
      
         
