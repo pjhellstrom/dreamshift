@@ -7,7 +7,7 @@ import LandingPage from "./components/pages/LandingPage";
 
 //Employee Pages
 import EmpShift from "./components/EmpShift/EmpShift";
-import EmpMyShift from "./components/EmpShift/EmpMyShift"
+import EmpMyShift from "./components/EmpShift/EmpMyShift";
 //Manager Pages
 import MgrShift from "./components/MgrShift/MgrShift";
 import MgrTeam from "./components/MgrShift/MgrTeam";
@@ -15,30 +15,115 @@ import MgrAddShift from "./components/MgrShift/MgrAddShift";
 import MgrApprove from "./components/MgrShift/MgrApprove";
 // import MgrShiftUp from "./components/MgrShift/MgrShiftUp";
 
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userId: "",
+      teamId: "",
+      isManager: ""
+    };
+  }
 
+  onUserLogin = (activeUserId, activeTeamId, activeIsManager) => {
+    console.log(
+      "In onUserLogin, setting global state of these: ",
+      activeUserId,
+      activeTeamId,
+      activeIsManager
+    );
+    this.setState({
+      userId: activeUserId,
+      teamId: activeTeamId,
+      isManager: activeIsManager
+    });
+    console.log("Updated global state:", this.state);
+    if (this.state.isManager === true) {
+      // this.props.history.push("/managerview");
+    } else {
+      // this.props.history.push("/employeeview");
+    }
+  };
 
-function App() {
-  return (
-    <Router>
-      <div>
-        {/* <NavTabs /> */}
-        <Route exact path="/" component={LandingPage} />
-		{/* <Route exact path="/login" component={LandingPage} /> */}
+  render() {
+    return (
+      <Router>
+        <div>
+          <Route
+            exact
+            path="/"
+            component={() => <LandingPage onUserLogin={this.onUserLogin} />}
+          />
+          <Route
+            exact
+            path={"/managerview"}
+            component={() => (
+              <MgrShift
+                teamId={this.state.teamId}
+                isManager={this.state.isManager}
+              />
+            )}
+          />
+          <Route
+            exact
+            path={"/managerview/team"}
+            component={() => (
+              <MgrTeam
+                teamId={this.state.teamId}
+                isManager={this.state.isManager}
+              />
+            )}
+          />
 
-		{/* Manager pages */}
-        <Route exact path="/managerview" component={MgrShift} />
-		{/* <Route exact path="/managerview/updateshift" component={MgrShiftUp} /> */}
-        <Route exact path="/managerview/team" component={MgrTeam} />
-        <Route exact path="/managerview/addshift" component={MgrAddShift} />
-        <Route exact path="/managerview/approve" component={MgrApprove} />
+          <Route
+            exact
+            path={"/managerview/addshift"}
+            component={() => (
+              <MgrAddShift
+                teamId={this.state.teamId}
+                isManager={this.state.isManager}
+              />
+            )}
+          />
 
-		{/* Employee Pages */}
-        <Route exact path="/employeeview" component={EmpShift} />
-		<Route exact path="/employeeview/EmpMyShift" component={EmpMyShift} />
-        {/* <Route path="/contact" component={Contact} /> */}
-      </div>
-    </Router>
-  );
+          <Route
+            exact
+            path={"/managerview/approve"}
+            component={() => (
+              <MgrApprove
+                teamId={this.state.teamId}
+                isManager={this.state.isManager}
+              />
+            )}
+          />
+
+          <Route
+            exact
+            path={"/employeeview"}
+            component={() => (
+              <EmpShift
+                userId={this.state.userId}
+                teamId={this.state.teamId}
+                isManager={this.state.isManager}
+              />
+            )}
+          />
+
+          <Route
+            exact
+            path={"/employeeview/EmpMyShift"}
+            component={() => (
+              <EmpMyShift
+                userId={this.state.userId}
+                teamId={this.state.teamId}
+                isManager={this.state.isManager}
+              />
+            )}
+          />
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
