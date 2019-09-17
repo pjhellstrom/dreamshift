@@ -14,12 +14,12 @@ class EmpMyShift extends Component{
     }
 
     componentWillMount(){
-        API.getEmpShift("5d7fc54b661e1588acbf04e2")
+        // API.getEmpShift("5d7fc54b661e1588acbf04e2")
 
         API.getEmpShift("5d7fd5cb455afd3e76369cdc")
         .then(res =>
     {
-    console.log(res.data);
+    // console.log(res.data);
     // let sortedData = sortShifts(res.data);
     let shiftData = sortShifts(res.data.shifts);
     // let pendingData = sortShifts(res.data.pendingShifts);
@@ -33,6 +33,7 @@ class EmpMyShift extends Component{
     {
 
     // let pendingData = res.data.pendingShifts;
+    console.log("all res" + res);
     let pendingData = sortShifts(res.data.pendingShifts);
     console.log(pendingData);
     this.setState({ pendingShifts: pendingData }, () => console.log("a value of pending is "+ this.state.pendingShifts));
