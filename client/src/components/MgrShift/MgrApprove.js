@@ -8,6 +8,7 @@ import MgrApprovalCard from "./MgrApprvoalCard";
 class MgrApprove extends Component {
 	state= {
 		employees:[],
+		teamId: ""
 	}
 
 	// componentWillMount(){
@@ -24,8 +25,13 @@ class MgrApprove extends Component {
 
 	componentWillMount(){
 		console.log("Approval Page Mounting")
+		this.setState({
+			teamId: this.props.teamId
+		});
 		// API.getEmployees("5d77e45fb112c824efae3718")
-		API.getPending("5d77e45fb112c824efae3718")
+		//API.getPending("5d77e45fb112c824efae3718") // Test team ID
+		// API.getPending("5d81035a81e5aa8ede795ed1") // pika@chu.ca manager
+		API.getPending(this.state.teamId) //Trying to use state team ID
 		.then(res =>
 			{
 				console.log(res.data);
