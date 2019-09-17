@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LandingPage from "./components/pages/LandingPage";
+import { Redirect } from "react-router-dom";
 
 // import Date from "./components/Date/Date";
 // import Day from "./components/Day";
@@ -38,17 +39,26 @@ class App extends Component {
       isManager: activeIsManager
     });
     console.log("Updated global state:", this.state);
-    if (this.state.isManager === true) {
-      // this.props.history.push("/managerview");
-    } else {
-      // this.props.history.push("/employeeview");
-    }
+    // if (this.state.isManager === true) {
+    //   this.props.history.push("/managerview");
+    // } else {
+    //   this.props.history.push("/employeeview");
+    // }
   };
 
-  render() {
+  render() { // Redirect user on login
+	let redirect = null;
+	if (this.state.isManager === true) {
+		redirect = <Redirect to = "/managerview" />
+	}
+	else if (this.state.isManager === false){
+		redirect = <Redirect to = "/employeeview" />
+	}
+
     return (
       <Router>
         <div>
+		  {redirect}
           <Route
             exact
             path="/"

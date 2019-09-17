@@ -76,7 +76,7 @@ class LandingPage extends Component {
             value={this.state.password}
             name="password"
             onChange={this.handleInputChange}
-            type="text"
+            type="password"
             placeholder="Enter Your Password"
           />
           <br />
