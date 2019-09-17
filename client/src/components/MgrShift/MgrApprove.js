@@ -10,8 +10,21 @@ class MgrApprove extends Component {
 		employees:[],
 	}
 
+	// componentWillMount(){
+	// 	console.log("Approval Page Mounting")
+	// 	API.getPending("5d77e45fb112c824efae3718")
+	// 	.then(res =>
+	// 		{
+	// 			console.log(res.data);
+	// 			this.setState({ employees: res.data })
+	// 		}
+	// 		)
+	// 	.catch(err => console.log(err));
+	// }
+
 	componentWillMount(){
-		console.log("Team Page Mounting")
+		console.log("Approval Page Mounting")
+		// API.getEmployees("5d77e45fb112c824efae3718")
 		API.getPending("5d77e45fb112c824efae3718")
 		.then(res =>
 			{
@@ -21,6 +34,8 @@ class MgrApprove extends Component {
 			)
 		.catch(err => console.log(err));
 	}
+
+
 
 	render() {
 		return (
@@ -32,21 +47,27 @@ class MgrApprove extends Component {
 					{this.state.employees.map(
 						// console.log(this.state.employees),
 						
+						
 						(employees, i) => (
+
+							// console.log(employees),
+
 							<MgrApprovalCard
 								{...employees} // Breaks out employee data for rendering each card
 								key={i} // Gives each card a react key i
 							/>
 						)
+
+
 					)}
 
-					
-
 				</div>
-				{/* <i className="fas fa-user-plus"></i> Add New Team Member (non-func) */}
+				
 			</div>
 		);
 	}
+
+
 }
 
 export default MgrApprove;
