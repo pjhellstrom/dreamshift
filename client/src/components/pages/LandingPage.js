@@ -1,84 +1,108 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import api from "../utils/api";
-import Button from 'react-bootstrap/Button'
-
+import Button from "react-bootstrap/Button";
 
 class LandingPage extends Component {
+  state = {
+    username: "",
+    password: "",
+    userId: "",
+    teamId: "",
+    isManager: ""
+  };
 
-	state = {
-		username: "",
-		password: "",
-	};
+  handleInputChange = event => {
+    const value = event.target.value;
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
+  };
 
-	handleInputChange = event => {
-		const value = event.target.value;
-		const name = event.target.name;
-		this.setState({
-			[name]: value
-		});
-	};
+  handleFormSubmit = event => {
+    event.preventDefault();
 
-	handleFormSubmit = event => {
-		event.preventDefault();
-		console.log(this.state)
-	};
+    console.log("In handleFormSubmit, authenticating this user", this.state);
 
+    API.authUser({
+      username: this.state.username,
+      password: this.state.password
+    })
+      .then(res => {
+        console.log("In callback from API.authUser, res is: ", res);
+        this.setState({
+          userId: res.data._id,
+          teamId: res.data.teamId,
+          isManager: res.data.isManager
+        });
+        return res.data;
+      })
+      .then(response => {
+        this.props.onUserLogin(
+          response._id,
+          response.teamId,
+          response.isManager
+        );
+        // return response;
+      })
+      // .then(response => {
+      //   console.log("In response after authenticated");
+      //   response.isManager === true
+      //     ? window.redirect("/managerview")
+      //     : window.redirect("/employeeview");
+      // })
+      .catch(err => console.log(err));
+  };
 
-
-	render() {
-		return (
-			<div>
-
-				<form className="form">
-
-					<input
-						value={this.state.name}
-						name="username"
-						onChange={this.handleInputChange}
-						type="text"
-						placeholder="User Name"
-					/><br/>
-
-					<input
-						value={this.state.password}
-						name="password"
-						onChange={this.handleInputChange}
-						type="password"
-						placeholder="Password"
-					/><br/>
-
-
-					<Button onClick={this.handleFormSubmit}>Submit</Button>
-				</form>
-
-
-				<div>
-					<h1>Landing Page</h1>
-					<p>This will need to be replaced with a proper login page</p>
-				</div>
-				<button className="btn btn-primary">
-					<Link
-						to="/managerview"
-						className={window.location.pathname === "/managerview"}
-						style={{ color: "white" }}
-					>
-						Login As Manager
-					</Link>
-				</button>
-				<button className="btn btn-primary">
-					<Link
-						to="/employeeview"
-						className={window.location.pathname === "/employeeview"}
-						style={{ color: "white" }}
-					>
-						Login As Employee
-					</Link>
-				</button>
-
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div>
+        <div>
+          <h1>Landing Page</h1>
+        </div>
+        <form className="form">
+          <input
+            value={this.state.username}
+            name="username"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Enter Your Email"
+          />
+          <br />
+          Password
+          <input
+            value={this.state.password}
+            name="password"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Enter Your Password"
+          />
+          <br />
+          <button onClick={this.handleFormSubmit}>Submit</button>
+        </form>
+        <br />
+        <button className="btn btn-primary">
+          <Link
+            to="/managerview"
+            className={window.location.pathname === "/managerview"}
+            style={{ color: "white" }}
+          >
+            Login As Manager
+          </Link>
+        </button>
+        <button className="btn btn-primary">
+          <Link
+            to="/employeeview"
+            className={window.location.pathname === "/employeeview"}
+            style={{ color: "white" }}
+          >
+            Login As Employee
+          </Link>
+        </button>
+      </div>
+    );
+  }
 }
 
 export default LandingPage;
