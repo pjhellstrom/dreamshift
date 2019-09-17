@@ -12,7 +12,7 @@ class MgrApprove extends Component {
 
 	componentWillMount(){
 		console.log("Team Page Mounting")
-		API.getEmployees("5d77e45fb112c824efae3718")
+		API.getPending("5d77e45fb112c824efae3718")
 		.then(res =>
 			{
 				console.log(res.data);

@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export default {
-
   // getManager: function() {
   //   return axios.get("/api/shifts/5d77e45fb112c824efae3718");
   // }
@@ -10,12 +9,18 @@ export default {
 		return axios.get("/api/shifts/"+id);
 	},
 
-
 	// Manager API Calls for Employees
 	getEmployees: function(id) {
 		// console.log(id);
 		return axios.get("/api/user/manager/all/"+id);
 	},
+
+	getPending: function(id) {
+		// console.log(id);
+		return axios.get("/api/user/manager/allPending/"+id);
+	},
+
+	// /manager/allPending/:id
 
 	addEmployee: function(newEmp) {
 		// console.log(newEmp);

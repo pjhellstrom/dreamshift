@@ -16,27 +16,12 @@ class MgrApprovalCard extends Component{
 		console.log(id)
 	}
 
-	getShiftData(){
-		API.getEmployees("")
-		.then(res =>
-			{
-				console.log(res.data);
-				this.setState({ employees: res.data })
-			}
-			)
-		.catch(err => console.log(err));
-	}
-	// getEmpShiftPending: function (id){
-	// 	return axios.get("/api/user/employee/pendingShifts/"+id);
-	// }
-
 	render(){
 		console.log("Approval Card")
-		console.log(this.props.pendingShifts)
-		console.log(this.props.pendingShifts.length)
+		// console.log(this.props.pendingShifts)
+		// console.log(this.props.pendingShifts.length)
 		if (this.props.pendingShifts.length > 0) {
-			this.getShiftData()
-			.then(()=>{
+			
 			return (
 				<div className="card">
 
@@ -76,7 +61,7 @@ class MgrApprovalCard extends Component{
 
 				</div>
 			);
-			})
+			
 		}
 		else {return("");}
 	}
