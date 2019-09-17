@@ -4,53 +4,60 @@ export default {
   // getManager: function() {
   //   return axios.get("/api/shifts/5d77e45fb112c824efae3718");
   // }
-  getTeam: function(id) {
-    console.log(id);
-    return axios.get("/api/shifts/" + id);
-  },
+	getTeam: function(id) {
+		console.log(id);
+		return axios.get("/api/shifts/"+id);
+	},
 
-  // Manager API Calls for Employees
-  getEmployees: function(id) {
-    // console.log(id);
-    return axios.get("/api/user/manager/all/" + id);
-  },
+	// Manager API Calls for Employees
+	getEmployees: function(id) {
+		// console.log(id);
+		return axios.get("/api/user/manager/all/"+id);
+	},
 
-  getEmployeesPending: function(id) {
-    return axios.get("/api/user/manager/allPending/" + id);
-  },
+	getPending: function(id) {
+		// console.log(id);
+		return axios.get("/api/user/manager/allPending/"+id);
+	},
 
-  addEmployee: function(newEmp) {
-    // console.log(newEmp);
-    return axios.post("/api/user/manager/addemployee", newEmp);
-  },
+	// /manager/allPending/:id
 
-  deleEmployee: function(id) {
-    // console.log(id);
-    return axios.delete("/api/user/manager/deleteuser/" + id);
-  },
+	addEmployee: function(newEmp) {
+		// console.log(newEmp);
+		// return axios.post("/api/user/manager/addemployee", newEmp);
+		return axios.post("/api/auth/register", newEmp);
+	},
 
-  // Manager API Calls for Shifts
-  addShift: function(newShift) {
-    // console.log(newShift);
-    return axios.post("/api/shifts/manager/addshift", newShift);
-  },
+	deleEmployee: function(id) {
+		// console.log(id);
+		return axios.delete("/api/user/manager/deleteuser/" + id);
+	},
 
-  deleShift: function(id) {
-    // console.log(id);
-    return axios.delete("/api/shifts/manager/deleteshift/" + id);
-  },
+	// Manager API Calls for Shifts
+	addShift: function(newShift) {
+		// console.log(newShift);
+		return axios.post("/api/shifts/manager/addshift", newShift);
+	},
 
-  updateShift: function(id) {
-    return axios.put("/api/user/employee/claimShift/" + id);
-  },
+	deleShift: function(id) {
+		// console.log(id);
+		return axios.delete("/api/shifts/manager/deleteshift/"+id);
+	},
 
-  //Employee API Calls for shifts
-  getEmpShift: function(id) {
-    return axios.get("/api/user/employee/shifts/" + id);
-  },
+	updateShift: function(id) {
+		return axios.put("/api/user/employee/claimShift/"+id);
+	},
 
-  //Employee API Calls for shifts
-  getEmpShiftPending: function(id) {
-    return axios.get("/api/user/employee/pendingShifts/" + id);
-  }
+
+	//Employee API Calls for shifts
+	getEmpShift: function (id){
+		return axios.get("/api/user/employee/shifts/"+id);
+	},
+
+	//Employee API Calls for pending shifts
+	getEmpShiftPending: function (id){
+		return axios.get("/api/user/employee/pendingShifts/"+id);
+	}
+
+
 };

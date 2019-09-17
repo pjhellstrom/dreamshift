@@ -14,7 +14,7 @@ class MgrShift extends Component {
 		.then(res =>
 			{
 				console.log(res.data);
-				this.setState({ teamInfo: res.data }, () => console.log("a value is "+ this.state.teamInfo));
+				this.setState({ teamInfo: res.data });
 			}
 			)
 		.catch(err => console.log(err));
@@ -35,8 +35,6 @@ class MgrShift extends Component {
 							<ShiftCard
 							{...shifts} // Breaks out shift data for rendering each card
 							key={i} // Gives each card a react key i
-							deleShift={this.deleShift}
-							updateShift={this.updateShift}
 						/>
 						)
 					)}
