@@ -6,6 +6,7 @@ import { sortShifts } from "../../utils/helper";
 import API from "../../utils/api";
 // import shifts from "../../fakedata/shift.json";
 
+
 class EmpMyShift extends Component {
   state = {
     teamId: "",
@@ -13,6 +14,7 @@ class EmpMyShift extends Component {
     approvedShifts: [],
     pendingShifts: []
   };
+
 
   componentWillMount() {
     this.setState({
