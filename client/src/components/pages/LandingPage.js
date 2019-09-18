@@ -60,9 +60,11 @@ class LandingPage extends Component {
     return (
       <div>
         <div>
-          <h1>Landing Page</h1>
+          <h1>Dream Shift</h1>
         </div>
         <form className="form">
+        <br />
+          User
           <input
             value={this.state.username}
             name="username"
@@ -83,7 +85,7 @@ class LandingPage extends Component {
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
         <br />
-        <button className="btn btn-primary">
+        {/* <button className="btn btn-primary">
           <Link
             to="/managerview"
             className={window.location.pathname === "/managerview"}
@@ -100,7 +102,7 @@ class LandingPage extends Component {
           >
             Login As Employee
           </Link>
-        </button>
+        </button> */}
       </div>
     );
   }
